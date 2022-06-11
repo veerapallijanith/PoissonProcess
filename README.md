@@ -1,4 +1,8 @@
-# Poisson Process
+# EXP. NO: 06
+
+# DATE: 
+# <p align = "center"> Poisson Process </p>
+
 
 # Aim : 
 To find the probability of that  (i) exactly 4 customers arrive (ii) more than 4 customers arrive (iii) fewer than 4 customers in 2 minute  arrival. Given that the customers arrive at a bank according to a Poisson process with mean rate of 3 per minute  during a time interval of 2 min. 
@@ -19,11 +23,39 @@ The Poisson process is one of the most widely-used counting processes. It is usu
  
 # Procedure :
 
-![image](https://user-images.githubusercontent.com/104613195/172528169-f26bdf76-f357-4c48-b806-a0a80da21cac.png)
+![image](https://user-images.githubusercontent.com/104613195/171325180-eaf80506-545c-4f35-878a-1e95aa0e81e3.png)
+
+
 
 # Program :
+```python
+"""
+Developed by: VEERAPALLI JANITH
+Reg no:212220230057
+"""
+import numpy as np
+import math
+mean=3
+t=2
+def poisson(n):
+    sum=1
+    for i in range(1,n+1):
+         sum=sum*i 
+    p=math.exp(-mean*t)*(mean*t)**n/sum
+    return round(p,2) 
+fq=poisson(4)
+print("The Probability of getting exactly 4 customers arrive = ",fq)
+
+sq=1-(poisson(4)+poisson(3)+poisson(2)+poisson(1)+poisson(0)) 
+print("The Probability of getting more than 4 customers arrive = ",sq)
+tq=(poisson(3)+poisson(2)+poisson(1)+poisson(0))
+print("The Probability of getting fewer than 4 customers in 2 minute arrival = ",tq)
+```
 
  
 
-# Results and Output : 
- 
+# Output : 
+![Screenshot (279)](https://user-images.githubusercontent.com/75243072/172534244-fde6f6e2-fa16-4695-8ce3-33da4a75f237.png)
+
+# Result :
+Thus,the probability of given problem using poisson process is implemented.
